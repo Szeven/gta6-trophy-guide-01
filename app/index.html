@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — Platinum Road</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="title-block">
+    <h1>Platinum Road</h1>
+    <p class="subtitle">The GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies</p>
+  </div>
+  <div class="header-side">
+    <div class="progress-wrap">
+      <div class="progress-text"><span id="earned-count">0</span> of <span id="total-count">55</span> earned · <span id="earned-pct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-sub" id="progress-sub">Platinum: 0% — start the story</div>
+    </div>
+    <div class="header-toggles">
+      <button id="theme-toggle" type="button" title="Switch theme">Night</button>
+      <label class="spoiler-toggle" title="Hide story trophies until earned">
+        <input type="checkbox" id="spoiler-toggle"> Spoilers off
+      </label>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap</button>
+  <button type="button" class="tab" data-view="missables">Missables <span class="tab-badge" id="missables-badge"></span></button>
+  <button type="button" class="tab" data-view="nextup">Next up</button>
+  <button type="button" class="tab" data-view="sources">Sources</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view active">
+    <div class="controls">
+      <input type="search" id="search" placeholder="Search trophies by name…" aria-label="Search trophies">
+      <label>Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Kind
+        <select id="kind-filter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="exploration">Exploration</option>
+          <option value="combat">Combat</option>
+          <option value="driving">Driving</option>
+          <option value="activities">Activities</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="partner">Partner</option>
+          <option value="money">Money</option>
+          <option value="completion">Completion</option>
+          <option value="misc">Misc</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="missable-only"> Missable only</label>
+      <label class="check"><input type="checkbox" id="hide-earned"> Hide earned</label>
+      <div class="io">
+        <button id="export" type="button">Export progress</button>
+        <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+      </div>
+    </div>
+    <p class="list-meta" id="list-meta"></p>
+    <div id="trophy-list" class="trophy-list"></div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <h2>Roadmap to the platinum</h2>
+    <p class="page-intro">Five phases, in order. Finish one before the next and the platinum
+    falls out at the end. Times are our estimates for a first playthrough.</p>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
+
+  <section id="view-missables" class="view">
+    <h2>Missable trophies</h2>
+    <p class="page-intro">Four trophies can slip past you. Each one says exactly when it
+    can be missed and how to avoid it. Everything else on the list can be
+    earned in free roam after the story, so do not worry about those.</p>
+    <div id="missables-list" class="trophy-list"></div>
+  </section>
+
+  <section id="view-nextup" class="view">
+    <h2>Next up</h2>
+    <p class="page-intro">Based on what you have earned so far, here is the smartest order
+    to chase what is left. Tick trophies off in the Checklist and this page
+    updates itself.</p>
+    <div id="nextup-list" class="nextup-list"></div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <h2>Sources &amp; what is confirmed</h2>
+    <div class="sources-body">
+      <h3>The trophy list is official</h3>
+      <p>The 55 trophy names, descriptions and grades are the official
+      PlayStation 5 list, frozen on 2026-11-18. Every name, description,
+      grade and hidden flag was taken from the official list on
+      <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a>,
+      with each grade and PSN's progress target checked against
+      <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a>.
+      The two agree on every name, description and grade: 55 trophies, 1
+      platinum, 2 gold, 6 silver, 46 bronze, 28 hidden.</p>
+      <h3>The guides are our own advice</h3>
+      <p>Every guide in this app is our own advice built from the official
+      description of its trophy, not yet checked in the game. We had not
+      played the game when this guide was written. Where the official
+      description does not pin a place down, the guide says so plainly
+      instead of inventing a location. Where a trophy's trigger is unclear
+      from the description alone, the guide says that too, and gives you
+      the most likely way to test it.</p>
+      <h3>What else is confirmed</h3>
+      <p>The game is Grand Theft Auto VI, set in Leonida with Vice City at
+      its heart, starring Lucia Caminos and Jason Duval — all officially
+      announced by Rockstar Games. Everything else in the guides (routes,
+      loadouts, timings) is our advice, not Rockstar's word.</p>
+      <h3>No Rockstar artwork</h3>
+      <p>This guide uses no Rockstar logo and no official artwork. The look
+      is our own.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Platinum Road — an unofficial fan guide. Not affiliated with Rockstar
+  Games or Take-Two Interactive. Trophy names, descriptions and grades are
+  the official PlayStation 5 list. Guide text is our own words.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

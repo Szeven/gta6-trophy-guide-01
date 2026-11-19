@@ -1,0 +1,289 @@
+/* Platinum Road — the look is our own: a paper theme by day, a night theme
+   after dark, one coral accent each. Serif display type for titles, a system
+   sans for the body. No images, no web fonts, nothing fetched. */
+
+:root {
+  --bg: #f6f3ee;
+  --surface: #ffffff;
+  --ink: #1d2129;
+  --muted: #626a75;
+  --line: #e3ddd2;
+  --accent: #d24e2a;
+  --accent-ink: #ffffff;
+  --gold: #d4af5a;
+  --silver: #aeb6bf;
+  --bronze: #c98b5e;
+  --platinum: #d8e1ea;
+  --good: #2e7d4f;
+  --warn: #b3261e;
+  --radius: 14px;
+  --radius-small: 6px;
+}
+
+body.night {
+  --bg: #0f1218;
+  --surface: #171c24;
+  --ink: #edeae4;
+  --muted: #8e96a3;
+  --line: #2a3140;
+  --accent: #ff6b4a;
+  --accent-ink: #17120f;
+  --gold: #d4af5a;
+  --silver: #c3c9cf;
+  --bronze: #c98b5e;
+  --platinum: #d8e1ea;
+  --good: #6fbf8f;
+  --warn: #ff8a80;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  margin: 0 0 8px;
+}
+
+a { color: var(--accent); }
+
+/* Header */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 28px 32px 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.top h1 { font-size: 42px; letter-spacing: -0.5px; }
+.subtitle { color: var(--muted); margin: 0; font-size: 15px; }
+
+.header-side { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+
+.progress-wrap { min-width: 320px; }
+.progress-text { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.progress-bar {
+  height: 10px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+.progress-sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+.header-toggles { display: flex; gap: 12px; align-items: center; }
+.header-toggles button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-small);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.spoiler-toggle { font-size: 14px; color: var(--muted); cursor: pointer; }
+
+/* Tabs */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-size: 15px;
+  padding: 12px 14px 9px;
+  cursor: pointer;
+}
+.tab.active { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-badge {
+  background: var(--warn);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 11px;
+  padding: 1px 7px;
+  margin-left: 2px;
+}
+
+/* Main */
+
+main { padding: 24px 32px 40px; max-width: 1100px; margin: 0 auto; }
+.view { display: none; }
+.view.active { display: block; }
+.page-intro { color: var(--muted); max-width: 720px; margin: 0 0 20px; }
+
+/* Controls */
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.controls input[type="search"] {
+  flex: 1 1 240px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+}
+.controls select {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+}
+.controls label { font-size: 14px; color: var(--muted); }
+.controls .check { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+.io { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.io button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-small);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.import { font-size: 14px; color: var(--muted); cursor: pointer; }
+.import input { display: none; }
+.list-meta { color: var(--muted); font-size: 14px; margin: 8px 0 16px; }
+
+/* Trophy cards */
+
+.trophy-list { display: flex; flex-direction: column; gap: 12px; }
+.trophy {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.trophy.earned { border-color: var(--good); }
+.trophy.hidden-spoiler .trophy-name,
+.trophy.hidden-spoiler .trophy-desc,
+.trophy.hidden-spoiler .guide-body { filter: blur(5px); user-select: none; }
+.trophy-head { display: flex; gap: 12px; align-items: flex-start; }
+.trophy-head input[type="checkbox"] { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); cursor: pointer; }
+.trophy-main { flex: 1; min-width: 0; }
+.trophy-name { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 19px; font-weight: 700; }
+.trophy-desc { color: var(--muted); margin-top: 2px; }
+.trophy-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.tag {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 2px 9px;
+  color: var(--muted);
+}
+.tag.medal-platinum { background: var(--platinum); color: #33414f; border-color: var(--platinum); font-weight: 700; }
+.tag.medal-gold { background: var(--gold); color: #4a3605; border-color: var(--gold); font-weight: 700; }
+.tag.medal-silver { background: var(--silver); color: #2c343c; border-color: var(--silver); font-weight: 700; }
+.tag.medal-bronze { background: var(--bronze); color: #4a2c14; border-color: var(--bronze); font-weight: 700; }
+.tag.missable { border-color: var(--warn); color: var(--warn); font-weight: 700; }
+.guide-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 0 0;
+  font-weight: 600;
+}
+.guide-body { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+.guide-body p { margin: 0 0 8px; }
+.guide-meta { font-size: 13px; color: var(--muted); }
+.guide-sources { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 8px; }
+.note-box { margin-top: 10px; }
+.note-box label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 4px; }
+.note-box textarea {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  color: var(--ink);
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* Roadmap */
+
+.roadmap { display: flex; flex-direction: column; gap: 16px; }
+.phase {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.phase h3 { font-size: 21px; }
+.phase .phase-meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+.phase ol { margin: 8px 0 0; padding-left: 22px; }
+.phase li { margin-bottom: 6px; }
+.phase li.done { text-decoration: line-through; color: var(--muted); }
+.phase-progress { font-size: 14px; font-weight: 600; color: var(--good); }
+
+/* Next up */
+
+.nextup-list { display: flex; flex-direction: column; gap: 12px; }
+.nextup-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+.nextup-item .nextup-why { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+/* Sources page */
+
+.sources-body { max-width: 760px; }
+.sources-body h3 { margin-top: 20px; }
+.sources-body p { margin: 0 0 10px; }
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 18px 32px 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .top, main, .tabs { padding-left: 16px; padding-right: 16px; }
+  .top h1 { font-size: 32px; }
+  .progress-wrap { min-width: 0; width: 100%; }
+  .header-side { align-items: flex-start; width: 100%; }
+  .io { margin-left: 0; }
+}
