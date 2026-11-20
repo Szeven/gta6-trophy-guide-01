@@ -1,56 +1,29 @@
+# Platinum Road — GTA 6 Trophy Guide & Tracker
+
 [![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/Szeven/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/Szeven/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-# GTA VI Trophy Guide — Platinum Road
-
-An offline web app that is the best guide and tracker for the 55 PlayStation 5
-trophies of Grand Theft Auto VI. It opens in a desktop browser with the network
-off, tracks your progress on the official trophy list, and walks you to the
-platinum one trophy at a time.
+An offline, open-source guide and tracker for all **55 PlayStation 5 trophies** of Grand Theft Auto VI — 1 platinum, 2 gold, 6 silver, 46 bronze. No network, no account, no ads: static files that open in any desktop browser.
 
 ## What it does
 
-- **The full official list.** All 55 trophies with their official name,
-  description and grade: 1 platinum, 2 gold, 6 silver, 46 bronze. Nothing
-  invented, nothing left out.
-- **A real guide for every trophy, in our own words.** What to do, where and
-  how, and when it can be missed. Where the official description does not pin
-  a place down, the guide says so plainly instead of guessing.
-- **A roadmap to the platinum.** Ordered phases from the first mission to the
-  final cleanup, with an estimate of how long each phase takes.
-- **Missables flagged.** Every trophy that can be missed is marked, with the
-  exact moment it can slip past you and how to avoid that.
-- **A tracker that remembers.** Tick trophies off and your progress is saved
-  in the browser. Export it, import it on another machine, and pick up where
-  you left off.
-- **Filters, search and a spoiler setting.** Filter by grade, by kind
-  (story, exploration, combat, driving, collectibles, activities, money and
-  misc), or search by name. The spoiler setting hides story trophies until
-  you have earned them.
-- **A Next up planner.** It looks at what you have earned and suggests the
-  next trophies to chase, so you always know what to do next.
-- **Notes.** Write a note on any trophy — a location, a loadout, a reminder —
-  and it is saved with your progress.
-- **Dark and light themes.** Paper by day, night by night.
-
-## Confirmed vs our advice
-
-The trophy names, descriptions and grades are the official PlayStation 5
-list, frozen on 2026-11-18 (sources: the official list on Exophase and
-PSNProfiles). The guide text is our own advice built from those official
-descriptions, not yet checked in the game — the game had not been played by
-us when this guide was written, and the guide says so where it matters. No
-Rockstar logo or official artwork appears anywhere in this guide.
+- **Checklist tracker** — every trophy with its official name, description and grade; tick them off, progress saves in the browser (localStorage), and can be exported to a file and imported back.
+- **Filters** — by kind (story, missable, collectibles, activities, side quests), by grade, by earned / not earned, plus full-text search.
+- **Spoiler setting** — hides the names and descriptions of story trophies until you earn them.
+- **Roadmap to the platinum** — the order to earn them in, in six stages built from the official descriptions: story first, side stories, activities and skills, collectibles and the world, odd jobs and cleanup, then 100% completion and the platinum.
+- **Missables flagged** — the four trophies that can be missed are marked on every view, with a dedicated missables page.
+- **A guide for every trophy, in our own words, with its sources named** — what to do, where and how, and when it can be missed. Names, descriptions and grades are the official list as PlayStation publishes it (via Exophase and PSNProfiles, 18 Nov 2026); the guides are our own advice from those descriptions and are not yet verified in-game — where a place or trigger is not pinned down, the guide says so instead of inventing one.
 
 ## Run it
 
 ```sh
-node serve.ts            # serves app/ on http://localhost:8080
+node serve.ts
 ```
 
-Then open http://localhost:8080 in a desktop browser. No build step, no
-network: the app loads nothing from outside itself.
+Then open http://localhost:8080. Or serve `app/` with any static HTTP server — the app loads nothing from outside its own files and works with the network off.
+
+Add `?demo=1` to the URL to load sample progress (13 of 55 earned) so you can try the tracker at a glance; your own progress is saved separately in the browser.
 
 ## Hand it in
 
@@ -58,24 +31,12 @@ network: the app loads nothing from outside itself.
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-`main.ts` copies `app/` and `screenshots/` to the output directory and writes
-`dossier.json` with the vendored make.fun library.
+`main.ts` copies `app/` and `screenshots/` to the output directory and writes `dossier.json` with the kit's `vendor/makefun-frontend.ts` library.
 
-## Layout
+## Sources
 
-- `app/index.html` — the guide's shell and all its pages.
-- `app/style.css` — the look: paper and night themes.
-- `app/app.js` — the tracker: progress, filters, search, spoiler setting,
-  export and import, notes, roadmap progress and the Next up planner.
-- `app/data/trophies.json` — the official 55 trophies plus a guide, a kind,
-  a missable flag, a difficulty rating and sources for each one.
-- `main.ts` — the program that hands the guide in.
-- `serve.ts` — the local static server for development.
-- `screenshots/` — 4 screens of the guide running.
-- `shots.json` — which views the screenshots show.
-
-## License
-
-MIT. See `LICENSE`.
+- Official trophy list (names, descriptions, grades): Exophase — https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/
+- PSN progress targets: PSNProfiles — https://psnprofiles.com/trophies/43531-grand-theft-auto-vi
+- Guides: written for this entry from the official descriptions.
 
 <sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
